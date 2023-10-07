@@ -23,7 +23,13 @@
       occurrences = 0;
     }
   }
- 
+  function downloadPDF() {
+  const doc = new jsPDF();
+  doc.text(`Input Text: ${inputText}`, 20, 20);
+  doc.text(`Search String: ${searchStr}`, 20, 30);
+  doc.text(`Occurrences: ${occurrences}`, 20, 40);
+  doc.save('Occurrence-counter.pdf');
+}
   
 </script>
 
@@ -42,7 +48,11 @@
                     bind:value={searchStr}/>
                 </div>
 			</div><br>
-			<button on:click={countOccurrences}>Count Occurrences</button>
+			
+      <div id="buttonArea">
+				<button on:click={countOccurrences}>Count Occurrences</button>
+				<button on:click={downloadPDF}>Download as pdf</button>
+			</div>
 			<div class="result-box">
 				<p>Occurrences: {occurrences}</p>
 			
@@ -70,7 +80,7 @@
 	  border-radius: 5px;
 	  cursor: pointer;
 	  cursor: pointer;
-      transition: background-color 0.3s;
+    transition: background-color 0.3s;
 	}
 	button:hover {
 	  background-color: rgb(113, 109, 247);
@@ -99,23 +109,20 @@
   .show-toast {
     display: block;
   }
-  .occurrence-box {
-    border: 1px solid #ccc;
-    padding: 20px;
-    border-radius: 5px;
-    margin: 20px;
-  }
 
-  .occurrence-count {
-    margin-top: 10px;
-  }
   .result-box {
     border: 1px solid #ccc;
     padding: 10px;
     margin-top: 20px;
     border-radius: 5px;
     background-color: #f0f0f0;
-	
-    
   }
+  #buttonArea {
+		margin-top: 0px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 0px; /* Adjust the gap between buttons as needed */
+	}
+
 </style>
