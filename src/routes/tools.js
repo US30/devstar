@@ -23,4 +23,10 @@ export let tools = {
         link: '/string-length-calculator',
         description: "Discover character counts instantly! Input text into our String Length Calculator to find the total number of characters, including spaces and special characters. Ideal for writers, coders, and anyone tracking character limits. Simplify text management for any length – from short phrases to lengthy paragraphs. Take control of character counts effortlessly. Try our String Length Calculator today!"
     },
+    'occurrence-counter': {
+        name: 'Occurrence Counter',
+        icon: 'arrow-right-arrow-left',
+        link: '/occurrence-counter',
+        description: "Our word frequency counter allows you to count the frequency usage of each word in your text. Paste or type in your text below, and click submit.Discover character counts instantly!. A string occurrence counter is a utility that helps you find and tally the number of times a specific substring or character sequence appears within a given text or string. It's a valuable tool for tasks such as text analysis, search functionality, and data processing, providing quick insights into the frequency of a particular pattern within a larger text body." 
+    },
 };
